@@ -1,0 +1,36 @@
+<% extend('../layout') %>
+    <div class="container">
+        <button onclick="addEventTemplate()" class="btn btn-primary">+ Add Event Template</button>
+    </div>
+    <br>
+    <div class="container">
+        <table class="table table-hover table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>No</th>
+                    <th>Event Id</th>
+                    <th>Template Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if(data){
+                    for(var i = 0;i < data.length;i++) { %>
+                        <tr>
+                            <td>
+                                <a class="a-inside edit" href="../eventTemplate/edit/<%=data[i].id%>">Edit</a>
+                                <a class="a-inside delete" href="../eventTemplate/delete/<%=data[i].id%>">Delete</a>
+                            </td>
+                            <td><%=data[i].id%></td>
+                            <td><%=data[i].event_id%></td>
+                            <td><%=data[i].template_name%></td>
+                        </tr>
+                    <% }
+                }else{ %>
+                    <tr>
+                      <td colspan="6">No Event Template Found</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>

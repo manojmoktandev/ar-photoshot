@@ -1,0 +1,38 @@
+<% extend('../layout') %>
+    <div class="container">
+        <button onclick="addEventTemplateDevice()" class="btn btn-primary">+ Add Event Template Device</button>
+    </div>
+    <br>
+    <div class="container">
+        <table class="table table-hover table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>No</th>
+                    <th>Event Template Id</th>
+                    <th>Event Device Id</th>
+                    <th>Event Template Device Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if(data){
+                    for(var i = 0;i < data.length;i++) { %>
+                        <tr>
+                            <td>
+                                <a class="a-inside edit" href="../eventTemplateDevice/edit/<%=data[i].id%>">Edit</a>
+                                <a class="a-inside delete" href="../eventTemplateDevice/delete/<%=data[i].id%>">Delete</a>
+                            </td>
+                            <td><%=data[i].id%></td>
+                            <td><%=data[i].event_template_id%></td>
+                            <td><%=data[i].event_device_id%></td>
+                            <td><%=data[i].event_template_device_name%></td>
+                        </tr>
+                    <% }
+                }else{ %>
+                    <tr>
+                      <td colspan="6">No Event Template Device Found</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>

@@ -1,0 +1,30 @@
+<% extend('../layout') %>
+    <div class="container">
+        <button onclick="addDevice()" class="btn btn-primary">+ Add Device</button>
+    </div>
+    <br>
+    <div class="container">
+        <table class="table table-hover table-striped table-dark">
+            <tr>
+                <th>Action</th>
+                <th>No</th>
+                <th>Name</th>
+            </tr>
+            <% if(data){
+                for(var i = 0;i < data.length;i++) { %>
+                    <tr>
+                        <td>
+                            <a class="a-inside edit" href="../device/edit/<%=data[i].id%>">Edit</a>
+                            <a class="a-inside delete" href="../device/delete/<%=data[i].id%>">Delete</a>
+                        </td>
+                        <td><%=data[i].id%></td>
+                        <td><%=data[i].name%></td>
+                    </tr>
+                <% }
+            }else{ %>
+                <tr>
+                  <td colspan="6">No Devices Found</td>
+                </tr>
+            <% } %>
+        </table>
+    </div>

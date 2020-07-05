@@ -1,0 +1,25 @@
+<% extend('../layout') %>
+<div class="container">
+    <form method="POST">
+        <% if(data){ %>
+            <div class="form-group">
+                <input type="text" class="form-control" id="id" aria-describedby="idHelp" placeholder="Enter id"  name="id" value=<%=data.id%> hidden>
+            </div>
+            <div class="form-group">
+                <label for="event_template_id">Event Template Id</label>
+                <input type="text" class="form-control" id="event_template_id" name="event_template_id" value= <%=data.event_template_id%>>
+            </div>
+            <div class="form-group">
+                <label for="event_device_id">Event Device Id</label>
+                <input type="text" class="form-control" id="event_device_id" name="event_device_id" value= <%=data.event_device_id%>>
+            </div>
+            <div class="form-group">
+                <label for="event_template_device_name">Event Template Device Name</label>
+                <input type="text" class="form-control" id="event_template_device_name" name="event_template_device_name" value= <%=data.event_template_device_name%>>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        <% }else{ %>
+            <h5>No Event Template Device Data To Edit</h5>
+        <% } %>
+    </form>
+</div>

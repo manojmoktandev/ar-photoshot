@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	    <title><%= title %></title>
+	    <link rel="stylesheet" href="/stylesheets/style.css">
+	    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+	    <script src="/javascripts/jquery.min.js"></script>
+	    <script src="/javascripts/bootstrap.js"></script>
+	    <script src="/javascripts/main.js"></script>
+	    <script src="/javascripts/ag-grid-community.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="container">
+				<h1><%= title %></h1>
+			</div>
+			<div class="container">
+				<!-- <a href="/users" class="btn btn-primary">Users</a> -->
+				<a href="/device" class="btn btn-primary">Device</a>
+				<a href="/event" class="btn btn-primary">Event</a>
+				<a href="/eventDevice" class="btn btn-primary">Event Device</a>
+				<a href="/eventTemplate" class="btn btn-primary">Event Template</a>
+				<a href="/eventTemplateDevice" class="btn btn-primary">Event Template Device</a>
+			</div>
+			<hr>
+			<%- content %>
+		</div>
+	</body>
+</html>

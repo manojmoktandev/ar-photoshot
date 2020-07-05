@@ -1,0 +1,32 @@
+<% extend('../layout') %>
+    <div class="container">
+        <button onclick="addEvent()" class="btn btn-primary">+ Add Event</button>
+    </div>
+    <br>
+    <div class="container">
+        <table class="table table-hover table-striped table-dark">
+            <tr>
+                <th>Action</th>
+                <th>No</th>
+                <th>Event Name</th>
+                <th>Event Type</th>
+            </tr>
+            <% if(data){
+                for(var i = 0;i < data.length;i++) { %>
+                    <tr>
+                        <td>
+                            <a class="a-inside edit" href="../event/edit/<%=data[i].id%>">Edit</a>
+                            <a class="a-inside delete" href="../event/delete/<%=data[i].id%>">Delete</a>
+                        </td>
+                        <td><%=data[i].id%></td>
+                        <td><%=data[i].event_name%></td>
+                        <td><%=data[i].event_type%></td>
+                    </tr>
+                <% }
+            }else{ %>
+                <tr>
+                  <td colspan="6">No Events Found</td>
+                </tr>
+            <% } %>
+        </table>
+    </div>

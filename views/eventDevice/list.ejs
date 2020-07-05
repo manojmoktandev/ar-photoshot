@@ -1,0 +1,36 @@
+<% extend('../layout') %>
+    <div class="container">
+        <button onclick="addEventDevice()" class="btn btn-primary">+ Add Event Device</button>
+    </div>
+    <br>
+    <div class="container">
+        <table class="table table-hover table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>No</th>
+                    <th>Event Id</th>
+                    <th>Device Id</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if(data){
+                    for(var i = 0;i < data.length;i++) { %>
+                        <tr>
+                            <td>
+                                <a class="a-inside edit" href="../eventDevice/edit/<%=data[i].id%>">Edit</a>
+                                <a class="a-inside delete" href="../eventDevice/delete/<%=data[i].id%>">Delete</a>
+                            </td>
+                            <td><%=data[i].id%></td>
+                            <td><%=data[i].event_id%></td>
+                            <td><%=data[i].device_id%></td>
+                        </tr>
+                    <% }
+                }else{ %>
+                    <tr>
+                      <td colspan="6">No Event Device Found</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>

@@ -1,0 +1,40 @@
+<% extend('../layout') %>
+    <div class="container">
+        <button onclick="addUser()" class="btn btn-primary">+ Add Users</button>
+    </div>
+    <br>
+    <div class="container">
+        <table class="table table-hover table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>No</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if(data){
+                    for(var i = 0;i < data.length;i++) { %>
+                        <tr>
+                            <td>
+                                <a class="a-inside edit" href="../users/edit/<%=data[i].id%>">Edit</a>
+                                <a class="a-inside delete" href="../users/delete/<%=data[i].id%>">Delete</a>
+                            </td>
+                            <td><%=data[i].id%></td>
+                            <td><%=data[i].firstname%></td>
+                            <td><%=data[i].lastname%></td>
+                            <td><%=data[i].phone%></td>
+                            <td><%=data[i].email%></td>
+                        </tr>
+                    <% }
+                }else{ %>
+                    <tr>
+                      <td colspan="6">No Users Found</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>

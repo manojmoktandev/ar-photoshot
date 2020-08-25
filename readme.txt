@@ -1,3 +1,4 @@
+photoshot in sports  store  using AR.
 ======= For RUN Node JS in your system =======
 	
 If you don't have Node Js in your  system
